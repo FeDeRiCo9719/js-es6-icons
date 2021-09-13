@@ -1,6 +1,3 @@
-// Milestone 1
-// Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
-
 // Input - dati
 const icons = [
     {
@@ -127,6 +124,7 @@ const colors = [
 /*
 FUNZIONI
 */
+// gli argomenti della funzione sono l'array da ciclare e il container in cui stampare
 const printIcons = (arr, box) => {
 
     arr.forEach(
@@ -143,11 +141,15 @@ const printIcons = (arr, box) => {
 PROGRAMMA
 */
 // 1. forEach => stampare in html i riquadri con le icone usando il destructuring attraverso una funzione
-// gli argomenti della funzione sono l'array da ciclare e il container in cui stampare
+// Milestone 1
+// Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 
+// salvo il valore del contenitore in cui inserire le icone
 const boxIcons = document.getElementById('Box_Icons');
 
-printIcons(colors,boxIcons );
+// richiamo la funzione per stampare
+printIcons(icons, boxIcons);
+
 
 
 // Milestone 2

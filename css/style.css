@@ -6,7 +6,9 @@
 }
 
 /*---------------------- COMMON ----------------------*/
-body {}
+body {
+    /* height: 100vh; */
+}
 
 
 /* <!------------------------ HEADER ------------------------> */
@@ -34,7 +36,7 @@ nav {
 /* <!------------------------ MAIN ------------------------> */
 main {
     background-color: rgb(209, 214, 212);
-    height: calc(100vh - 100px);
+    height: 100vh;
     padding: 10px;
 }
 .box-icons {
@@ -42,10 +44,10 @@ main {
     flex-wrap: wrap;
 }
 .card {
-    height: 70px;
-    border-radius: 10px;
+    height: 60px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.432);
     width: calc(20% - 80px);
     background-color: rgb(255, 255, 255);
-    margin: 40px;
+    margin: 20px 40px;
 }
