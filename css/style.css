@@ -6,7 +6,9 @@
 }
 
 /*---------------------- COMMON ----------------------*/
-body {}
+body {
+    height: 100vh;
+}
 
 
 /* <!------------------------ HEADER ------------------------> */
@@ -34,5 +36,16 @@ nav {
 /* <!------------------------ MAIN ------------------------> */
 main {
     background-color: rgb(209, 214, 212);
-    height: 100vh;
+    height: (100% - 100px);
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carta {
+    height: 30px;
+    width: calc(20% - 40px);
+    background-color: red;
+    /* border: 1px solid white; */
+    margin: 20px;
 }
