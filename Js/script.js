@@ -1,111 +1,111 @@
 // Input - dati
 const icons = [
     {
-        name: '',
+        name: 'apple-alt',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
     {
-        name: '',
+        name: 'ice-cream',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
     {
-        name: '',
+        name: 'fish',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
     {
-        name: '',
+        name: 'lemon',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
     {
-        name: '',
+        name: 'hamburger',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
     {
-        name: '',
+        name: 'pizza-slice',
         family: 'fas',
         prefix: 'fa-',
         category: 'food'
     },
 
     {
-        name: '',
+        name: 'beer',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
     {
-        name: '',
+        name: 'glass-whiskey',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
     {
-        name: '',
+        name: 'wine-bottle',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
     {
-        name: '',
+        name: 'cocktail',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
     {
-        name: '',
+        name: 'coffee',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
     {
-        name: '',
+        name: 'glass-martini',
         family: 'fas',
         prefix: 'fa-',
         category: 'beverage'
     },
 
     {
-        name: '',
+        name: 'dragon',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
     },
     {
-        name: '',
+        name: 'kiwi-bird',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
     },
     {
-        name: '',
+        name: 'frog',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
     },
     {
-        name: '',
+        name: 'hippo',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
     },
     {
-        name: '',
+        name: 'otter',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
     },
     {
-        name: '',
+        name: 'horse',
         family: 'fas',
         prefix: 'fa-',
         category: 'animal'
@@ -129,10 +129,23 @@ const printIcons = (arr, box) => {
 
     arr.forEach(
         (item) => {
-            box.innerHTML += `<div class="card"></div>`;
+
+            // destructuring - salvo le proprietà
+            // const {name, family, prefix, category} = item;
+
+            box.innerHTML += `
+            <div class="card">
+                <i class="${item.family} ${item.prefix}${item.name}"></i>
+                <div class='icon_name'>${item.name}</div>
+            </div>
+            `;
+
+            console.log(item.name);
         }
     )
 }
+
+// <i class="${} ${}"></i>
 
 
 
