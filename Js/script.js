@@ -147,7 +147,7 @@ PROGRAMMA
 
 const boxIcons = document.getElementById('Box_Icons');
 
-printIcons(icons,boxIcons );
+printIcons(colors,boxIcons );
 
 
 // Milestone 2
