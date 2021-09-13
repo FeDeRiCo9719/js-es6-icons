@@ -38,14 +38,14 @@ main {
     background-color: rgb(209, 214, 212);
     height: (100% - 100px);
     padding: 10px;
+}
+.box-icons {
     display: flex;
     flex-wrap: wrap;
 }
-
-.carta {
+.card {
     height: 30px;
     width: calc(20% - 40px);
     background-color: red;
-    /* border: 1px solid white; */
     margin: 20px;
 }
