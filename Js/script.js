@@ -118,7 +118,6 @@ const colors = {
     beverage: '#FF0000'
 }
 
-console.log(colors);
 
 /*
 FUNZIONI
@@ -129,19 +128,19 @@ const printIcons = (arr, box) => {
     arr.forEach(
         (item) => {
 
-            // destructuring - salvo le proprietà
+            // destructuring - salvo le proprietà all'interno di viariabili
             // const {name, family, prefix, category} = item;
+            const {name, family, prefix, color} = item;
 
             box.innerHTML += `
             <div class="card">
                 <i class="${item.family} ${item.prefix}${item.name}"></i>
-                <div class='icon_name'>${item.name}</div>
+                <div class="${item.category} >${item.name}</div>
             </div>
             `;
         }
     )
-}
-
+} 
 
 
 /*
@@ -149,8 +148,6 @@ PROGRAMMA
 */
 // Milestone 1
 // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
-// 1. forEach => stampare in html i riquadri con le icone usando il destructuring attraverso una funzione
-
 // salvo il valore del contenitore in cui inserire le icone
 const boxIcons = document.getElementById('Box_Icons');
 // richiamo la funzione per stampare
@@ -160,7 +157,6 @@ const boxIcons = document.getElementById('Box_Icons');
 
 // Milestone 2
 // Coloriamo le icone per tipo
-// 2. .Map => creare un nuovo array inserendo i colori
 const colorIcons = icons.map (
     (item) => {
         return {
@@ -184,4 +180,15 @@ printIcons(colorIcons, boxIcons);
 
 // Milestone 3
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
-// 3. .Filter => 
+const arrayCategory = [];
+icons.forEach(
+    (item) => {
+        console.log(item.category);
+        if ( arrayCategory.includes(item.category) == false ) {
+            arrayCategory.push(item.category)
+        }
+    }
+);
+
+// aggiungere le option della select in html
+const selectCategory = document.getElementById('category');

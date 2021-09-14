@@ -36,7 +36,7 @@ nav {
 /* <!------------------------ MAIN ------------------------> */
 main {
     background-color: rgb(193, 196, 194);
-    height: 100vh;
+    height: calc(100vh - 100px);
     padding: 10px;
 }
 .box-icons {
@@ -59,6 +59,4 @@ main {
     flex-direction: column;
 }
 
-.fas {
-    /* color: red; */
-}
+
