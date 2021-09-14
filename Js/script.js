@@ -131,11 +131,11 @@ const printIcons = (arr, box) => {
             // destructuring - salvo le proprietà all'interno di viariabili
             // const {name, family, prefix, category} = item;
             const {name, family, prefix, color} = item;
-
+            console.log(color);
             box.innerHTML += `
             <div class="card">
-                <i class="${item.family} ${item.prefix}${item.name}"></i>
-                <div class="${item.category} >${item.name}</div>
+                <i class="${item.family} ${item.prefix}${item.name} ${color}"></i>
+                <div>${item.name}</div>
             </div>
             `;
         }
