@@ -133,8 +133,8 @@ const printIcons = (arr, box) => {
             const {name, family, prefix, color} = item;
             box.innerHTML += `
             <div class="card">
-                <i class="${item.family} ${item.prefix}${item.name} style="color: ${color}"></i>
-                <div>${item.name}</div>
+                <i class="${family} ${prefix}${name}" style="color:${color};"></i>
+                <div>${name}</div>
             </div>
             `;
         }
