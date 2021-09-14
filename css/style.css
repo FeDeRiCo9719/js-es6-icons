@@ -59,4 +59,8 @@ main {
     flex-direction: column;
 }
 
+.color {
+    color: red;
+}
+
 
