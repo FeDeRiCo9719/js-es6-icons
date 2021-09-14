@@ -112,14 +112,13 @@ const icons = [
     },
 ];
 
-const colors = [
-    {
-        food: 'blue',
-        animal: 'yellow',
-        beverage: 'red'
-    }
-];
+const colors = {
+    food: 'orange',
+    animal: 'blue',
+    beverage: '#FF0000'
+}
 
+console.log(colors);
 
 /*
 FUNZIONI
@@ -139,35 +138,47 @@ const printIcons = (arr, box) => {
                 <div class='icon_name'>${item.name}</div>
             </div>
             `;
-
-            console.log(item.name);
         }
     )
 }
-
-// <i class="${} ${}"></i>
-
 
 
 
 /*
 PROGRAMMA
 */
-// 1. forEach => stampare in html i riquadri con le icone usando il destructuring attraverso una funzione
 // Milestone 1
 // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
+// 1. forEach => stampare in html i riquadri con le icone usando il destructuring attraverso una funzione
 
 // salvo il valore del contenitore in cui inserire le icone
 const boxIcons = document.getElementById('Box_Icons');
-
 // richiamo la funzione per stampare
-printIcons(icons, boxIcons);
+// printIcons(icons, boxIcons);
 
 
 
 // Milestone 2
 // Coloriamo le icone per tipo
 // 2. .Map => creare un nuovo array inserendo i colori
+const colorIcons = icons.map (
+    (item) => {
+        return {
+
+            // inserisco tutte le proprietà dell'array icons
+            name: item.name,
+            family: item.family,
+            prefix: item.prefix,
+            category: item.category,
+
+            // aggiungo una nuova proprità, il colore
+            color: colors [item.category]
+        };
+    }
+);
+console.log(colorIcons);
+// richiamo la funzione per stampare
+printIcons(colorIcons, boxIcons);
 
 
 
