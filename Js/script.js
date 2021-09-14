@@ -113,9 +113,9 @@ const icons = [
 ];
 
 const colors = {
-    food: 'orange',
-    animal: 'blue',
-    beverage: '#FF0000'
+    food: 'rgb(255, 115, 0)',
+    animal: 'rgb(0, 118, 197)',
+    beverage: 'rgb(17, 177, 57)'
 }
 
 
@@ -129,7 +129,6 @@ const printIcons = (arr, box) => {
         (item) => {
 
             // destructuring - salvo le proprietà all'interno di viariabili
-            // const {name, family, prefix, category} = item;
             const {name, family, prefix, color} = item;
             box.innerHTML += `
             <div class="card">
@@ -191,3 +190,10 @@ icons.forEach(
 
 // aggiungere le option della select in html
 const selectCategory = document.getElementById('category');
+arrayCategory.forEach(
+    (item) => {
+        selectCategory.innerHTML += `
+        <option value="${item}">${item}</option>
+        `
+    }
+);
