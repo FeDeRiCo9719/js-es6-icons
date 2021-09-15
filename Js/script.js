@@ -4,132 +4,136 @@ const icons = [
         name: 'apple-alt',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
     {
         name: 'ice-cream',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
     {
         name: 'fish',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
     {
         name: 'lemon',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
     {
         name: 'hamburger',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
     {
         name: 'pizza-slice',
         family: 'fas',
         prefix: 'fa-',
-        category: 'food'
+        category: 'Food'
     },
 
     {
         name: 'beer',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
     {
         name: 'glass-whiskey',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
     {
         name: 'wine-bottle',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
     {
         name: 'cocktail',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
     {
         name: 'coffee',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
     {
         name: 'glass-martini',
         family: 'fas',
         prefix: 'fa-',
-        category: 'beverage'
+        category: 'Beverage'
     },
 
     {
         name: 'dragon',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
     {
         name: 'kiwi-bird',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
     {
         name: 'frog',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
     {
         name: 'hippo',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
     {
         name: 'otter',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
     {
         name: 'horse',
         family: 'fas',
         prefix: 'fa-',
-        category: 'animal'
+        category: 'Animal'
     },
 ];
 
 const colors = {
-    food: 'rgb(255, 115, 0)',
-    animal: 'rgb(0, 118, 197)',
-    beverage: 'rgb(17, 177, 57)'
+    Food: 'rgb(255, 115, 0)',
+    Animal: 'rgb(0, 118, 197)',
+    Beverage: 'rgb(17, 177, 57)'
 }
 
 
 /*
 FUNZIONI
 */
+
 // gli argomenti della funzione sono l'array da ciclare e il container in cui stampare
 const printIcons = (arr, box) => {
+
+    box.innerHTML = "";
 
     arr.forEach(
         (item) => {
 
             // destructuring - salvo le proprietà all'interno di viariabili
             const {name, family, prefix, color} = item;
+
             box.innerHTML += `
             <div class="card">
                 <i class="${family} ${prefix}${name}" style="color:${color};"></i>
@@ -141,15 +145,14 @@ const printIcons = (arr, box) => {
 } 
 
 
+
 /*
 PROGRAMMA
 */
+
 // Milestone 1
-// Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 // salvo il valore del contenitore in cui inserire le icone
 const boxIcons = document.getElementById('Box_Icons');
-// richiamo la funzione per stampare
-// printIcons(icons, boxIcons);
 
 
 
@@ -171,6 +174,7 @@ const colorIcons = icons.map (
     }
 );
 console.log(colorIcons);
+
 // richiamo la funzione per stampare
 printIcons(colorIcons, boxIcons);
 
@@ -188,7 +192,7 @@ icons.forEach(
     }
 );
 
-// aggiungere le option della select in html
+// aggiungere le option della select in html in maniera dinamica, non dipendono dall'html ma da i dati in Js
 const selectCategory = document.getElementById('category');
 arrayCategory.forEach(
     (item) => {
@@ -197,3 +201,23 @@ arrayCategory.forEach(
         `
     }
 );
+
+console.log(selectCategory.value);
+
+// creare evento change per filtrare le icone in base alla option della select
+selectCategory.addEventListener('change',
+    function() {
+
+        const iconsFiltered = colorIcons.filter(
+            (item) => {
+                if ( item.category == selectCategory.value || selectCategory.value == "" ) {
+                    return true;
+                } 
+                return false;
+            }
+        );
+
+        printIcons( iconsFiltered, boxIcons )
+    }
+);
+
